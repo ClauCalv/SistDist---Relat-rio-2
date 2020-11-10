@@ -28,11 +28,39 @@ Primeiramente foi executado o comando rmiregistry, seguido pelo script \texttt{s
 execução de forma remota e local.}
 \addcontentsline{toc}{subsection}{1.2 Execução do client}
 
-Podemos ver todos os sinais de um protocolo TCP, a começar pelo handshake de 3 vias, os pacotes de confirmação entre os pacotes de mensagem, e a finalização bidirecional da comunicação.
+Foi feita a execução do arquivo client.sh adaptado do client.bat para execução no WSL.
+
+\vspace{2em}
+\begin{minipage}{\textwidth}
+    \hspace{-1em}
+    \centering
+    \includegraphics[trim= 0 150 250 0, clip, scale=.4]{prints/client.PNG}
+    \captionof{figure}{Execução do cliente}
+    \label{threadspng}
+    \hspace{1em}
+\end{minipage}
+\vspace{0.5em}
 
 
 \subsection*{2. Executar a classe serialization.SerialObject com os parâmetros adequados (nome de arquivo e operação).}
 \addcontentsline{toc}{section}{2. Execução da serialização}
+
+
+
+\vspace{2em}
+\begin{minipage}{\textwidth}
+    \hspace{-1em}
+    \centering
+    \includegraphics[scale=.35]{prints/serial1.PNG}
+    \hspace{1em}
+    \includegraphics[scale=.35]{prints/serial2.PNG}
+    \hspace{1em}
+    \includegraphics[scale=.35]{prints/serial3.PNG}
+    \captionof{figure}{Execução do rmiregistry e do server}
+    \label{threadspng}
+    \hspace{1em}
+\end{minipage}
+\vspace{0.5em}
 
 \subsubsection{2.1 - Qual o papel de cada operação (write, read e diff)?}
 \addcontentsline{toc}{subsection}{2.1 Diferenças de operação}
