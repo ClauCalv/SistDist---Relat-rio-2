@@ -11,20 +11,18 @@ public class SerialObjectClient extends SerialObject {
 
     public void serverdiff(Properties aProp) {
         try {
-            for (int x = 0; x < 5; x++) {
-                InetAddress host = InetAddress.getLocalHost();
-                Socket socket = new Socket(host.getHostName(), 4444);
-                ObjectOutputStream oos = new ObjectOutputStream(socket.getOutputStream());
-                oos.writeObject(aProp);
-                ObjectInputStream ois = new ObjectInputStream(socket.getInputStream());
-                Hashtable<String,String> diff = (Hashtable<String,String>) ois.readObject();
-                for (String key: diff.keySet()) {
-                    System.out.println(key+": "+diff.get(key));
-                }
-                ois.close();
-                oos.close();
-                socket.close();
+            InetAddress host = InetAddress.getLocalHost();
+            Socket socket = new Socket(host.getHostName(), 4444);
+            ObjectOutputStream oos = new ObjectOutputStream(socket.getOutputStream());
+            oos.writeObject(aProp);
+            ObjectInputStream ois = new ObjectInputStream(socket.getInputStream());
+            Hashtable<String,String> diff = (Hashtable<String,String>) ois.readObject();
+            for (String key: diff.keySet()) {
+                System.out.println(key+": "+diff.get(key));
             }
+            ois.close();
+            oos.close();
+            socket.close();
         } catch (Exception e) {
         }
     }
